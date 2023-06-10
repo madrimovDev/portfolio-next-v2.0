@@ -2,26 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.hr {
+	--mask: radial-gradient(
+				50.2px at 50% calc(100% + 39px),
+				#0000 calc(99% - 2px),
+				#000 calc(101% - 2px) 99%,
+				#0000 101%
+			)
+			calc(50% - 60px) calc(50% - 16px + 0.5px) / 120px 32px repeat-x,
+		radial-gradient(
+				50.2px at 50% -39px,
+				#0000 calc(99% - 2px),
+				#000 calc(101% - 2px) 99%,
+				#0000 101%
+			)
+			50% calc(50% + 16px) / 120px 32px repeat-x;
+	-webkit-mask: var(--mask);
+	mask: var(--mask);
 }
